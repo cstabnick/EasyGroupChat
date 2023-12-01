@@ -1,0 +1,11 @@
+@EasyGroupChat_HostAddress = http://localhost:5100
+
+GET {{EasyGroupChat_HostAddress}}/todos/
+Accept: application/json
+
+###
+
+POST {{EasyGroupChat_HostAddress}}/api/ServerManager/create
+Accept: application/json
+
+###
