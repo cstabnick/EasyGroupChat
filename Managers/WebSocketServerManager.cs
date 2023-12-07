@@ -1,15 +1,29 @@
-﻿namespace EasyGroupChat.Managers
+﻿
+using EasyGroupChat.Clients;
+using EasyGroupChat.Server;
+using System.Net.WebSockets;
+
+namespace EasyGroupChat.Managers
 {
+    // todo: Should this class exist?
     public class WebSocketServerManager : IServerManager
     {
-        public WebSocketServerManager() { 
-        
+        WebSocketServer _server ;
+        public WebSocketServerManager()
+        {
+            _server = new(Guid.NewGuid());
+
         }
 
-        public void CreateNewServer(ServerConfig config)
+        public void Connect(Guid serverId, IClient client)
         {
 
-            throw new NotImplementedException();
+            _server.AddClient(client);
+        }
+
+        public bool IsClientDisconnected(Guid clientId)
+        {
+            return _server.IsClientDisconnected(clientId);
         }
     }
 }

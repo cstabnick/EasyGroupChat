@@ -8,4 +8,5 @@ builder.Services.AddSingleton<IServerManager, WebSocketServerManager>();
 builder.Services.AddControllers();
 var app = builder.Build();
 app.MapControllers();
+app.UseWebSockets();
 app.Run();

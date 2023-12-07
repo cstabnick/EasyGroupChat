@@ -2,7 +2,7 @@
 {
     public class ServerConfig
     {
-        public Guid OwnerUserID { get; set; }
+        public Guid OwnerUserId { get; set; }
         public string? Password { get; set; }
     }
 }
